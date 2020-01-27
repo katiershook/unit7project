@@ -1,5 +1,6 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
+// imports NavLink for being active when the props match the current location.
 
 
 // navigation links on load

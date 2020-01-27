@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import  {createBrowserHistory} from 'history'
-// import { render } from '@testing-library/react';
 
+// imports all the good stuff 
+// assigns createBrowserHistory() to a variable globally 
 const history = createBrowserHistory()
 export default class SearchForm extends Component {
     state = {
@@ -9,7 +10,7 @@ export default class SearchForm extends Component {
   
     }
     
-
+// creates the on search function to set the state of the userSearch
     onSearch = e => {
         
         this.setState({
@@ -19,14 +20,14 @@ export default class SearchForm extends Component {
     console.log(this.state.userSearch);
     }
 
-
+// prevents default submission. Sets variable for the seach. Sets  variable for the interpolated search and pushed into the history stack.
 handleSubmit = e => {
     e.preventDefault();
      const searched = this.query.value
      this.props.onSearch(this.state.userSearch);
      let newLink = `/search/${searched}`
      history.push(newLink)
-
+// returns the search bar to empty
     e.currentTarget.reset();
 }
 
@@ -52,3 +53,4 @@ render() {
 }
 }
 
+// doesnt export here bc its exported at the top.

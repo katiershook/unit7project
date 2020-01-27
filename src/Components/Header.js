@@ -1,8 +1,9 @@
+// imports the needed components
 import React from "react"
 import Nav from "./Nav"
 import SearchForm from "./SearchForm"
 
-
+// creates the header component and renders the search and  nav components. The H1 is in a div and above the search to make sure it displays that way
 const Header = (props) => {
     // console.log(props, "hello")
     return (

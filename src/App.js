@@ -1,3 +1,4 @@
+// imports neccessary things
 import React, {Component} from 'react';
 import Header from "./Components/Header"
 
@@ -11,7 +12,7 @@ import './App.css';
 import PhotoList from "./Components/PhotoList"
 
 
-
+// creates component and  empty arrays for searches
 class App extends Component {
 constructor () {
   super();
@@ -24,7 +25,8 @@ constructor () {
     loading: true
     }
   }
-
+   
+  // uses 3 api fetches while interpolating the api key  to get back results  for the pre set buttons  buttons 
       performSearch = () => {
         
         fetch(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=dwight+shrute&per_page=&format=json&nojsoncallback=1`)
@@ -51,7 +53,7 @@ constructor () {
           })
         })
       }
-
+//  component and api call for the actaul seached keyword
     actualSearch = (searched) =>{  
   
       this.setState({
@@ -59,7 +61,7 @@ constructor () {
         loading:true 
               
       })
-      console.log(searched, "maybe")
+      // console.log(searched, "maybe")
       fetch(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${searched}&per_page=&format=json&nojsoncallback=1`)
     .then(response => response.json())
     .then(responseData=> {
@@ -76,7 +78,7 @@ constructor () {
     this.actualSearch();
          }
       
-
+// renders searches. uses switch to only return the first match vs all matches. Uses browserRouter so it has  access to the history .
   render() { 
    return (
       <BrowserRouter>
@@ -85,7 +87,9 @@ constructor () {
        <div className="main-Header" >
      
            <Route  path="/" component={() => < Header onSearch={this.actualSearch}/> }/>
+           
           <Switch>
+          
             <Route path ="/search" render ={() => <PhotoList title= {this.state.userSearch} />} />
        
            <Route  path="/pitbulls" render ={() => <PhotoList title={this.state.pitbulls} /> }/>
@@ -94,12 +98,12 @@ constructor () {
             </Switch>
             </div>
         </div>
-        {/* <SearchForm onSearch={this.performSearch} /> */}
+    
      </BrowserRouter>
     )
     
   }
 
       }
-
+// exports the entire component 
 export default App;

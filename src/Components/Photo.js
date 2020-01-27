@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-
+// photo component which uses url variable created in the PhotoList component.
 const Photo = props => {
   
 
@@ -19,5 +19,5 @@ const Photo = props => {
 
     );
 }
-
+// exports component 
 export default Photo;
