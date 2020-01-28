@@ -1,7 +1,7 @@
 import React from 'react'
 import Photo from "./Photo"
 import NotFound from "./NotFound"
-import App from "../App"
+// import App from "../App"
 // imports all the good stuff
 
 // creates the PhotoList component
