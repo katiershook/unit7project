@@ -17,10 +17,11 @@ const Nav = () =>{
    
         <ul>
     
-            <li><NavLink exact to='/'> Home </NavLink></li>
+            <li><NavLink exact to='/search'> Home </NavLink></li>
             <li><NavLink to="/theoffice">The Office </NavLink></li>
             <li><NavLink to="/pizza">pizza</NavLink></li>
             <li><NavLink to="/pitbulls">pitbulls</NavLink></li>
+         
             
         </ul>
     </nav>

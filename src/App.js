@@ -29,7 +29,7 @@ constructor () {
   // uses 3 api fetches while interpolating the api key  to get back results  for the pre set buttons  buttons 
       performSearch = () => {
         
-        fetch(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=dwight+shrute&per_page=&format=json&nojsoncallback=1`)
+        fetch(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=dwight+shrute&per_page=24&format=json&nojsoncallback=1`)
         .then(response => response.json())
         .then(responseData=> {
           this.setState({
@@ -37,7 +37,7 @@ constructor () {
           })
         })
       
-        fetch(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=pizza&per_page=&format=json&nojsoncallback=1`)
+        fetch(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=pizza&per_page=24&format=json&nojsoncallback=1`)
         .then(response => response.json())
         .then(responseData=> {
           this.setState({
@@ -45,7 +45,7 @@ constructor () {
           })
         })
 
-        fetch(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=pitbull+dogs&per_page=&format=json&nojsoncallback=1`)
+        fetch(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=pitbull+dogs&per_page=24&format=json&nojsoncallback=1`)
         .then(response => response.json())
         .then(responseData=> {
           this.setState({
@@ -67,15 +67,16 @@ constructor () {
     .then(responseData=> {
       this.setState({
         userSearch: responseData.photos.photo,
-        searched: this.searched,
-        loading: true
+        searched: searched,
+        loading: false
       })
     })
   
   }
   componentDidMount() {
-    this.performSearch();
     this.actualSearch();
+    this.performSearch();
+ 
          }
       
 // renders searches. uses switch to only return the first match vs all matches. Uses browserRouter so it has  access to the history .

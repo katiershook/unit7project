@@ -26,7 +26,7 @@ li {
 .search-form {
   max-width: 420px;
   display: flex;
-  margin: 0 auto 32px;
+  margin: 0 auto 10px;
 }
 
 .search-form button {
@@ -40,12 +40,12 @@ li {
 
 input {
   font-size: 1em;
-  width: 100%;
+  width: 89%;
   background-color: #edeff0;
   padding: 10px 10px;
   border: 1px solid #490730;
   border-right: 10px;
-  border-radius: 0.20em  0.23em;
+  border-radius: 0.23em  0.30em;
   outline: none;
 }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import Photo from "./Photo"
 import NotFound from "./NotFound"
-// import App from "../App"
+import App from "../App"
 // imports all the good stuff
 
 // creates the PhotoList component
@@ -15,7 +15,7 @@ const PhotoList = props => {
     let  photos = results.map(photo => 
         <Photo url ={`https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg` } key ={photo.id} />);
         return(
-            <div className="pic-holder">
+            <div className="photo-container">
                 <ul className="pic-list">
             {photos}
                 </ul>
