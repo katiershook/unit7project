@@ -14,7 +14,7 @@ const Header = (props) => {
         </div> 
         
         <div>
-            < Nav />
+            < Nav onSearch={props.onSearch} />
         </div>
   
         </div>

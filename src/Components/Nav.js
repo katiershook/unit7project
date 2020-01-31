@@ -1,11 +1,12 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
+import SearchForm from "./SearchForm"
 // imports NavLink for being active when the props match the current location.
 
 
 // navigation links on load
 
-const Nav = () =>{
+const Nav = (props) =>{
    
     return(
         <div>
@@ -18,9 +19,10 @@ const Nav = () =>{
         <ul>
     
             <li><NavLink exact to='/search'> Home </NavLink></li>
-            <li><NavLink to="/theoffice">The Office </NavLink></li>
-            <li><NavLink to="/pizza">pizza</NavLink></li>
-            <li><NavLink to="/pitbulls">pitbulls</NavLink></li>
+         <li><NavLink to="/theoffice" onClick={() => props.onSearch("dwight schrute")}>The Office </NavLink></li>
+
+         <li><NavLink to="/pizza" onClick={() => props.onSearch("Pizza")}>Pizza</NavLink></li>
+         <li><NavLink to="/pitbulls" onClick={() => props.onSearch("pibbles")}>Pitbulls </NavLink></li>
          
             
         </ul>

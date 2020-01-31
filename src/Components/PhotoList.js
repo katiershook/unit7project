@@ -25,7 +25,7 @@ const PhotoList = props => {
     } else {
         
         return(
-     < NotFound />
+     <NotFound />
         )
         
 }

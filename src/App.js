@@ -27,32 +27,32 @@ constructor () {
   }
    
   // uses 3 api fetches while interpolating the api key  to get back results  for the pre set buttons  buttons 
-      performSearch = () => {
+      // performSearch = () => {
         
-        fetch(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=dwight+shrute&per_page=24&format=json&nojsoncallback=1`)
-        .then(response => response.json())
-        .then(responseData=> {
-          this.setState({
-            dwight: responseData.photos.photo
-          })
-        })
+      //   fetch(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=dwight+shrute&per_page=24&format=json&nojsoncallback=1`)
+      //   .then(response => response.json())
+      //   .then(responseData=> {
+      //     this.setState({
+      //       dwight: responseData.photos.photo
+      //     })
+      //   })
       
-        fetch(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=pizza&per_page=24&format=json&nojsoncallback=1`)
-        .then(response => response.json())
-        .then(responseData=> {
-          this.setState({
-            pizza: responseData.photos.photo
-          })
-        })
+      //   fetch(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=pizza&per_page=24&format=json&nojsoncallback=1`)
+      //   .then(response => response.json())
+      //   .then(responseData=> {
+      //     this.setState({
+      //       pizza: responseData.photos.photo
+      //     })
+      //   })
 
-        fetch(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=pitbull+dogs&per_page=24&format=json&nojsoncallback=1`)
-        .then(response => response.json())
-        .then(responseData=> {
-          this.setState({
-            pitbulls: responseData.photos.photo
-          })
-        })
-      }
+      //   fetch(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=pitbull+dogs&per_page=24&format=json&nojsoncallback=1`)
+      //   .then(response => response.json())
+      //   .then(responseData=> {
+      //     this.setState({
+      //       pitbulls: responseData.photos.photo
+      //     })
+      //   })
+      // }
 //  component and api call for the actaul seached keyword
     actualSearch = (searched) =>{  
   
@@ -73,11 +73,11 @@ constructor () {
     })
   
   }
-  componentDidMount() {
-    this.actualSearch();
-    this.performSearch();
+  // componentDidMount() {
+  //   this.actualSearch();
+  //   this.performSearch();
  
-         }
+  //        }
       
 // renders searches. uses switch to only return the first match vs all matches. Uses browserRouter so it has  access to the history .
   render() { 
@@ -91,11 +91,11 @@ constructor () {
            
           <Switch>
           
-            <Route path ="/search" render ={() => <PhotoList title= {this.state.userSearch} />} />
+            <Route path ="/search" render ={() => <PhotoList title= {this.state.actualSearch} />} />
        
-           <Route  path="/pitbulls" render ={() => <PhotoList title={this.state.pitbulls} /> }/>
-           <Route  path="/pizza" render ={() => <PhotoList title={this.state.pizza} /> } />
-            <Route  path="/theoffice" render ={() => <PhotoList title={this.state.dwight} /> }/>
+           <Route  path="/pitbulls" render ={() => <PhotoList title={this.state.userSearch} /> }/>
+           <Route  path="/pizza" render ={() => <PhotoList title={this.state.userSearch} /> } />
+            <Route  path="/theoffice" render ={() => <PhotoList title={this.state.userSearch} /> }/>
             </Switch>
             </div>
         </div>
