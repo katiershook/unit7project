@@ -91,7 +91,7 @@ constructor () {
            
           <Switch>
           
-            <Route path ="/search" render ={() => <PhotoList title= {this.state.actualSearch} />} />
+            <Route path ="/search" render ={() => <PhotoList title= {this.actualSearch} />} />
        
            <Route  path="/pitbulls" render ={() => <PhotoList title={this.state.userSearch} /> }/>
            <Route  path="/pizza" render ={() => <PhotoList title={this.state.userSearch} /> } />

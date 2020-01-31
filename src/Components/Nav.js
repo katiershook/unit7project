@@ -18,11 +18,11 @@ const Nav = (props) =>{
    
         <ul>
     
-            <li><NavLink exact to='/search'> Home </NavLink></li>
+            <li><NavLink exact to='/'> Home </NavLink></li>
          <li><NavLink to="/theoffice" onClick={() => props.onSearch("dwight schrute")}>The Office </NavLink></li>
 
          <li><NavLink to="/pizza" onClick={() => props.onSearch("Pizza")}>Pizza</NavLink></li>
-         <li><NavLink to="/pitbulls" onClick={() => props.onSearch("pibbles")}>Pitbulls </NavLink></li>
+         <li><NavLink to="/pitbulls" onClick={() => props.onSearch("Pibble")}> Pitbulls </NavLink></li>
          
             
         </ul>
