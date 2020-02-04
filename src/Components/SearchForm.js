@@ -6,7 +6,7 @@ import  {createBrowserHistory} from 'history'
 const history = createBrowserHistory()
 export default class SearchForm extends Component {
     state = {
-        userSearch: ' ',
+        userSearch: ' '
   
     }
     
@@ -17,14 +17,14 @@ export default class SearchForm extends Component {
         userSearch: e.target.value
         
         });
-    console.log(this.state.userSearch);
+    
     }
 
 // prevents default submission. Sets variable for the seach. Sets  variable for the interpolated search and pushed into the history stack.
 handleSubmit = e => {
     e.preventDefault();
      const searched = this.query.value
-     this.props.onSearch(this.state.userSearch);
+     this.props.onSearch(this.query.value);
      let newLink = `/search/${searched}`
      history.push(newLink)
 // returns the search bar to empty
@@ -34,23 +34,22 @@ handleSubmit = e => {
 render() {
     return(
    <form className ="search-form" onSubmit = {this.handleSubmit} >
-<div className ="search-bar-div" >
+<label className ="" htmlFor ="search" ></label>
 
 
     <input type = "search"  onChange={this.onSearch} name="search" ref={ (input) => this.query = input} />
-    <button type="submit" className="search-button">
-         <div> <span> <svg fill="#fff" height="24" viewBox="0 0 23 23" width="23%" xmlns="http://www.w3.org/2000/svg">
+    <button type="submit" className="search-form">
+          <svg fill="#fff" height="20
+          " viewBox="0 0 23 30" width="34" xmlns="http://www.w3.org/2000/svg">
             <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
             <path d="M0 0h24v24H0z" fill="none"/>
-          </svg> </span></div>
+          </svg>
         </button>
-
     
-</div>
-  
-   </form>
+      </form> 
+
     );
 }
 }
 
-// doesnt export here bc its exported at the top.
+

@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import SearchForm from "./SearchForm"
+
 // imports NavLink for being active when the props match the current location.
 
 
@@ -16,9 +16,9 @@ const Nav = (props) =>{
         
       
    
-        <ul>
+        <ul> 
     
-            <li><NavLink exact to='/'> Home </NavLink></li>
+            {/* <li><NavLink exact to='/' > Home </NavLink></li> */}
          <li><NavLink to="/theoffice" onClick={() => props.onSearch("dwight schrute")}>The Office </NavLink></li>
 
          <li><NavLink to="/pizza" onClick={() => props.onSearch("Pizza")}>Pizza</NavLink></li>
