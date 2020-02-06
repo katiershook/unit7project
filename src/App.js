@@ -47,7 +47,7 @@ constructor () {
 }
    
 
-//  component and api call for the actaul seached keywor
+//  3  api calls for the actaul seached keyword
   componentDidMount() {
       this.actualSearch();
     
@@ -75,7 +75,7 @@ constructor () {
       pitbulls.loading= false;
       this.setState({pitbulls});
     })
-
+// this says dwight  shrute  but  the corresponding button is for the office. This is on purpose :)
     axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=dwight+schrute&per_page=24&format=json&nojsoncallback=1`)
     .then(response => {
       let dwight = {...this.state.dwight};
@@ -83,7 +83,8 @@ constructor () {
       dwight.loading= false;
       this.setState({dwight});
     })  
-  }
+  } 
+  // sets the home page to search for coffee
     actualSearch = (query ="coffee") =>{  
     axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`)
     .then(response => {

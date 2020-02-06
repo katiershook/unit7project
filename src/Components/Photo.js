@@ -2,7 +2,7 @@ import React from 'react';
 
 
 
-  
+  // interpolates data to the im src
   const Photo = props => {
 
      const id = props.data.id; 

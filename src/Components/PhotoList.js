@@ -2,7 +2,7 @@ import React from 'react'
 import Photo from "./Photo"
 import NotFound from "./NotFound"
 
-// creates the PhotoList component
+// creates the PhotoList component  and maps over the results and interpolates then shows photos.
 const PhotoList = (props) => {
     const results = props.data;
     let photos;
