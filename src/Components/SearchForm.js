@@ -1,14 +1,19 @@
 import React, { Component } from 'react'
 import  {createBrowserHistory} from 'history'
+import {withRouter} from 'react-router-dom';
 
 // imports all the good stuff 
 // assigns createBrowserHistory() to a variable globally 
-const history = createBrowserHistory()
-export default class SearchForm extends Component {
-    state = {
+//const history = createBrowserHistory()
+
+ class SearchForm extends Component {
+   constructor(props){
+   super(props);
+    this.state = {
         userSearch: ' '
   
-    }
+    };
+}
     
 // creates the on search function to set the state of the userSearch
     onSearch = e => {
@@ -25,8 +30,8 @@ handleSubmit = e => {
     e.preventDefault();
      const searched = this.query.value
      this.props.onSearch(this.query.value);
-     let newLink = `/search/${searched}`
-     history.push(newLink)
+     let newLink = `/search/${this.query.value}`;
+     this.props.history.push(newLink);
 // returns the search bar to empty
     e.currentTarget.reset();
 }
@@ -53,3 +58,4 @@ render() {
 }
 
 
+export default withRouter(SearchForm);

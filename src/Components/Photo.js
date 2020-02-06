@@ -1,23 +1,20 @@
 import React from 'react';
 
 
-// photo component which uses url variable created in the PhotoList component.
-const Photo = props => {
-  
-
-    return(
 
   
-  <div className="pic-wrapper">
-    <li className="pic-wrap">
-    <img src={props.url}
-     alt= ""  />
-    </li>
-  </div>
+  const Photo = props => {
 
+     const id = props.data.id; 
+      const secret = props.data.secret;  
+      const server = props.data.server;  
+      const farm = props.data.farm;
 
-
+    return (  
+    <li>     
+     <img src={`https://farm${farm}.staticflickr.com/${server}/${id}_${secret}.jpg`} alt="" />  
+     </li>
     );
-}
-// exports component 
-export default Photo;
+  }
+  
+  export default Photo;
